@@ -12,7 +12,7 @@ div.dokuwiki .header {
   background: url(images/titlebackground_center.png);
   margin: 5px;
   height: 130px;
-  min-width: 825px; 
+  min-width: 825px;
   position: relative; /* important for positioning of .tabnavi */
   z-index: 0;
 }
@@ -74,8 +74,8 @@ div.dokuwiki .pagename a {
 
 /* ---------------  tab navigation ---------------- */
 
-/** 
- * CSS centering trick by http://www.bluerobot.com/web/css/center2.html 
+/**
+ * CSS centering trick by http://www.bluerobot.com/web/css/center2.html
  * tabs by http://alistapart.com/articles/slidingdoors/
  */
 div.dokuwiki .tabnavi {
@@ -107,7 +107,7 @@ div.dokuwiki #tabnavi a {
   margin: 0;
   padding: 4px 12px 0 5px;
   background: url(images/rounded-corners-right.png) no-repeat top right;
-  
+
 }
 
 div.dokuwiki #tabnavi #current {
@@ -127,12 +127,12 @@ div.dokuwiki #tabnavi #current_inner {
 /* ---------------  blog and page includes ---------------- */
 
 div.dokuwiki div.hfeed {
-  margin-top: 20px;  
+  margin-top: 20px;
 }
 
 div.dokuwiki div.hfeed div.hentry {
   margin-bottom: 40px;
-  /* background: url(images/Blog_Header.png) no-repeat top; 
+  /* background: url(images/Blog_Header.png) no-repeat top;
     border-bottom: 1px solid __background_alt__;  */
 }
 
@@ -209,4 +209,15 @@ div.dokuwiki div.user {
 
 div.dokuwiki div.meta div.doc {
   text-align: center;
+}
+
+/* ------------- Media manager changes ----------------------- */
+
+#media__manager h1,
+#media__manager h2 {
+    margin-top: 0;
+}
+
+#media__tree ul {
+    margin-left: 0;
 }

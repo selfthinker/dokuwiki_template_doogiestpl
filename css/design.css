@@ -1,10 +1,10 @@
 /**
  * Design elements for Doogies Template
- *  
+ *
  * @date   August 2009
  * @author Andreas Gohr <andi@splitbrain.org>
  * @author Anika Henke <henke@cosmocode.de>
- * @author Robert Rackl 
+ * @author Robert Rackl
  */
 
 /* -------------- general elements --------------- */
@@ -411,7 +411,7 @@ div.dokuwiki h3 {font-size: 140%; margin-left: 0px; border-bottom: none; font-we
 div.dokuwiki h4 {font-size: 120%; margin-left: 0px; border-bottom: none; font-weight: bold;}
 div.dokuwiki h5 {font-size: 100%; margin-left: 0px; border-bottom: none; font-weight: bold;}
 
-/* indent different sections 
+/* indent different sections
 div.dokuwiki div.level1 {margin-left: 3px;}
 div.dokuwiki div.level2 {margin-left: 23px;}
 div.dokuwiki div.level3 {margin-left: 43px;}
@@ -548,55 +548,64 @@ div.dokuwiki table.inline td {
 
 /* ---------- table of contents ------------------- */
 
-div.dokuwiki div.toc {
+.dokuwiki div.toc, /* old */
+#dw__toc /* new */ {
   margin: 0 0 0 2em;
   float: right;
   width: 200px;
   font-size: 80%;
+  background-color: __background__;
   z-index: 99;
   clear: both;
 }
 
-div.dokuwiki div.tocheader {
+.dokuwiki div.tocheader, /* old */
+#dw__toc h3 /* new */ {
   border: 1px solid __border__;
   background-color: __background_alt__;
   text-align: left;
   font-weight: bold;
   padding: 3px;
-  margin-bottom: 2px;
+  margin: 0 0 2px;
 }
 
-div.dokuwiki span.toc_open,
-div.dokuwiki span.toc_close {
+.dokuwiki .toc span.toc_open, /* old */
+.dokuwiki .toc span.toc_close, /* old */
+#dw__toc h3 strong /* new */ {
     border: 0.4em solid __background_alt__;
     float: right;
     display: block;
     margin: 0.4em 3px 0 0;
 }
 
-div.dokuwiki span.toc_open span,
-div.dokuwiki span.toc_close span {
+.dokuwiki .toc span.toc_open span, /* old */
+.dokuwiki .toc span.toc_close span, /* old */
+#dw__toc h3 strong span /* new */ {
     display: none;
 }
 
-div.dokuwiki span.toc_open {
+#dw__toc h3.closed strong,
+.dokuwiki span.toc_open {
     margin-top: 0.4em;
     border-top: 0.4em solid __text__;
 }
 
-div.dokuwiki span.toc_close {
+#dw__toc h3.open strong,
+.dokuwiki span.toc_close {
     margin-top: 0;
     border-bottom: 0.4em solid __text__;
 }
 
-div.dokuwiki #toc__inside {
+.dokuwiki #toc__inside,
+#dw__toc > div {
   border: 1px solid __border__;
   background-color: __background__;
   text-align: left;
   padding: 0.5em 0 0.7em 0;
 }
 
-div.dokuwiki ul.toc {
+.dokuwiki #toc__inside ul, /* old */
+#dw__toc ul /* new */ {
   list-style-type: none;
   list-style-image: none;
   line-height: 1.2em;
@@ -604,23 +613,29 @@ div.dokuwiki ul.toc {
   margin: 0;
 }
 
-div.dokuwiki ul.toc li {
+.dokuwiki #toc__inside ul li, /* old */
+#dw__toc ul li /* new */ {
   background: transparent url(images/tocdot2.gif) 0 0.6em no-repeat;
   padding-left: 0.4em;
 }
 
-div.dokuwiki ul.toc li.clear {
+.dokuwiki #toc__inside ul li.clear, /* old */
+#dw__toc ul li.clear /* new */ {
   background-image: none;
   padding-left: 0.4em;
 }
 
-div.dokuwiki a.toc:link,
-div.dokuwiki a.toc:visited {
+.dokuwiki #toc__inside ul li a:link, /* old */
+.dokuwiki #toc__inside ul li a:visited, /* old */
+#dw__toc ul li a:link /* new */,
+#dw__toc ul li a:visited /* new */ {
   color: __extern__;
 }
 
-div.dokuwiki a.toc:hover,
-div.dokuwiki a.toc:active {
+.dokuwiki #toc__inside ul li a:hover, /* old */
+.dokuwiki #toc__inside ul li a:active, /* old */
+#dw__toc ul li a:hover /* new */,
+#dw__toc ul li a:active /* new */ {
   color: __text__;
 }
 

@@ -14,7 +14,7 @@
 if (!defined('DOKU_INC')) die();
 
 //get needed language array
-include DOKU_TPLINC."lang/en/lang.php"; 
+include DOKU_TPLINC."lang/en/lang.php";
 //overwrite English language values with available translations
 if (!empty($conf["lang"]) &&
     $conf["lang"] != "en" &&
@@ -38,9 +38,9 @@ if (!empty($conf["lang"]) &&
 
   <?php tpl_metaheaders()?>
 
-  <link rel="shortcut icon" href="<?php echo DOKU_TPL?>images/favicon.ico" />
+  <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
 
-  <?php /*old includehook*/ @include(dirname(__FILE__).'/meta.html')?>
+  <?php tpl_includeFile('meta.html')?>
 </head>
 
 <?php
@@ -52,7 +52,7 @@ function tpl_tabnavi(){
   global $ID;
   global $ACT;
   global $lang;
-  
+
   // collect the five config vars into one array
   $navbar_tabs = array();
   for ($i = 1; $i <= 5; $i++) {
@@ -60,26 +60,26 @@ function tpl_tabnavi(){
     $target = tpl_getConf('navbar_tab'.$i.'_target');
     $navbar_tabs[$title] = $target;
   }
-  
+
   echo("<ul>\n");
   foreach ($navbar_tabs as $title => $target) {
     // only add tab if title and target are filled.
     if (empty($title) || empty($target)) {
       continue;
     }
-    
+
     //check is user has enough rights to view target page (taken from fulltext.php)
     $targetID = cleanID($target);
     if (isHiddenPage($targetID) || auth_quickaclcheck($targetID) < AUTH_READ) {
       continue;
     }
-    
+
     echo '<li';
     if (strcasecmp($ID, $target) == 0 && $ACT == 'show') {  // if current page == this tab then show active style
       echo ' id="current"><div id="current_inner">'.$title.'</div>';
     } else {
       echo '>';
-      tpl_link(wl($targetID), $title);  
+      tpl_link(wl($targetID), $title);
     }
     echo "</li>\n";
   }
@@ -97,7 +97,7 @@ function tpl_tabnavi(){
 
 
 <body>
-<?php /*old includehook*/ @include(dirname(__FILE__).'/topheader.html')?>
+<?php tpl_includeFile('topheader.html')?>
 <?php html_msgarea() ?>
 <div class="dokuwiki">
 
@@ -105,7 +105,7 @@ function tpl_tabnavi(){
   <div class="user">
     <?php tpl_userinfo()?>
   </div>
-  
+
   <!--  breadcrumbs -->
   <?php if($conf['breadcrumbs']){?>
     <div class="breadcrumbs">
@@ -118,7 +118,7 @@ function tpl_tabnavi(){
       <?php tpl_youarehere() ?>
     </div>
   <?php }?>
-      
+
   <div class="clearer"></div>
 
   <div class="stylehead">
@@ -135,14 +135,14 @@ function tpl_tabnavi(){
       <div id="tabnavi" class="tabnavi">
         <?php tpl_tabnavi() ?>
       </div>
-      
+
       <div class="clearer"></div>
-      <?php /*old includehook*/ @include(dirname(__FILE__).'/header.html')?>
-    </div>  
+      <?php tpl_includeFile('header.html')?>
+    </div>
   </div>
   <?php flush()?>
 
-  <?php /*old includehook*/ @include(dirname(__FILE__).'/pageheader.html')?>
+  <?php tpl_includeFile('pageheader.html')?>
 
   <div class="page">
     <!-- ......... wikipage start ......... -->
@@ -154,29 +154,29 @@ function tpl_tabnavi(){
 
   <?php flush()?>
 
- 
-  <!-- footer -->  
+
+  <!-- footer -->
   <div class="stylefoot">
 
-    <?php /*old includehook*/ @include(dirname(__FILE__).'/pagefooter.html')?>
-    
+    <?php tpl_includeFile('pagefooter.html')?>
+
     <div class="bar" id="bar__bottom">
       <!-- page metadata -->
       <div class="meta">
         <div class="doc">
           <?php tpl_pageinfo()?>
         </div>
-      </div>  
-      
+      </div>
+
       <!--  page actions -->
       <div class="bar-left" id="bar__bottomleft">
-        <?php 
+        <?php
           global $conf;
           global $auth;
           global $lang;
-          
+
           tpl_button('login');
-          if($conf['useacl'] && $auth){  
+          if($conf['useacl'] && $auth){
             if($_SERVER['REMOTE_USER']){   // show only if user is logged in
               tpl_button('revert');
               tpl_button('edit');
@@ -185,23 +185,23 @@ function tpl_tabnavi(){
           }
         ?>
       </div>
-      
+
       <!--  search form -->
       <div class="bar-right" id="bar__bottomright" style="position:relative">
         <?php
           tpl_searchform();
         ?>
       </div>
-      
+
       <div class="clearer"></div>
-      
+
     </div>
 
   </div>
 
 </div>
 
-<?php /*old includehook*/ @include(dirname(__FILE__).'/footer.html')?>
+<?php tpl_includeFile('footer.html')?>
 
 <div class="no">
     <?php /* provide DokuWiki housekeeping, required in all templates */ tpl_indexerWebBug()?>
