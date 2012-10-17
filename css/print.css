@@ -1,8 +1,8 @@
 
 body {
   font: 10pt "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
-  background-color: White;
-  color: Black;
+  background-color: white;
+  color: black;
 }
 
 table {
@@ -69,7 +69,7 @@ div.page {
 
 /* general headline setup */
 h1, h2, h3, h4, h5 {
-    color: Black;
+    color: black;
     background-color: transparent;
     font-family: "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
     font-size: 100%;
@@ -99,14 +99,10 @@ img.media {
 }
 
 img.medialeft {
-  border: 0;
-  float: left;
   margin: 0 1.5em 0 0;
 }
 
 img.mediaright {
-  border: 0;
-  float: right;
   margin: 0 0 0 1.5em;
 }
 
@@ -143,36 +139,19 @@ span.li {
     font-weight: normal;
 }
 
-/* code blocks by indention */
-pre.pre {
+pre.pre, /* code blocks by indention */
+pre.code, /* code blocks by code tag */
+pre.file { /* code blocks by file tag */
   font-size: 8pt;
   padding: 0.5em;
   border: 1px dashed #000000;
-  color: Black;
-  overflow: visible;
-}
-
-/* code blocks by code tag */
-pre.code {
-  font-size: 8pt;
-  padding: 0.5em;
-  border: 1px dashed #000000;
-  color: Black;
+  color: black;
   overflow: visible;
 }
 
 /* inline code words */
 code {
   font-size: 120%;
-}
-
-/* code blocks by file tag */
-pre.file {
-  font-size: 8pt;
-  padding: 0.5em;
-  border: 1px dotted #000000;
-  color: Black;
-  overflow: visible;
 }
 
 /* footnotes */
@@ -234,5 +213,5 @@ table.inline td {
   text-align: right;
 }
 
-.toc, .footerinc, .header, .bar, .user { display: none; }
+#dw__toc, .toc, .footerinc, .header, .bar, .user { display: none; }
 
