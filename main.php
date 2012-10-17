@@ -10,6 +10,7 @@
 
 // must be run from within DokuWiki
 if (!defined('DOKU_INC')) die();
+@require_once(dirname(__FILE__).'/tpl_functions.php'); /* include hook for template functions */
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
