@@ -17,7 +17,7 @@
 
 .dokuwiki .stylehead {
     margin: 5px;
-    border: 1px solid __border__;
+    border: 1px solid #ccc;
     padding: 4px;
     border-radius: 20px;
 }
@@ -30,6 +30,7 @@
     background: -o-linear-gradient(left,  #154b99 0%,#3366cc 25%,#3366cc 75%,#6994e1 82%,#afcffc 96%,#88aeed 100%);
     background: -ms-linear-gradient(left,  #154b99 0%,#3366cc 25%,#3366cc 75%,#6994e1 82%,#afcffc 96%,#88aeed 100%);
     background: linear-gradient(to right,  #154b99 0%,#3366cc 25%,#3366cc 75%,#6994e1 82%,#afcffc 96%,#88aeed 100%);
+    __header_background__
     min-height: 120px;
     min-width: 825px;
     position: relative;
@@ -117,6 +118,7 @@
     background: -o-linear-gradient(top,  #b1c5e1 0%,#b1c5e1 10%,#87a5d0 11%,#87a5d0 55%,#7799c8 56%,#7799c8 100%);
     background: -ms-linear-gradient(top,  #b1c5e1 0%,#b1c5e1 10%,#87a5d0 11%,#87a5d0 55%,#7799c8 56%,#7799c8 100%);
     background: linear-gradient(to bottom,  #b1c5e1 0%,#b1c5e1 10%,#87a5d0 11%,#87a5d0 55%,#7799c8 56%,#7799c8 100%);
+    __tab_background__
     margin: 0;
     padding: 3px 10px 1px;
     border: solid #5a78a4;
