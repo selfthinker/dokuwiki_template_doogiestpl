@@ -5,6 +5,7 @@
  * @author Andreas Gohr <andi@splitbrain.org>
  * @author moraes <moraes@tipos.com.br>
  * @author Robert Rackl <wiki@doogie.de>
+ * @author Anika Henke <anika@selfthinker.org>
  */
 
 .dokuwiki div.page {
@@ -13,29 +14,32 @@
 }
 
 /* -------------- top row --------------- */
-.dokuwiki .header {
-    background: url(images/titlebackground_center.png);
+
+.dokuwiki .stylehead {
     margin: 5px;
-    height: 130px;
-    min-width: 825px;
-    position: relative; /* important for positioning of #tab__navi */
-    z-index: 0;
+    border: 1px solid __border__;
+    padding: 4px;
+    border-radius: 20px;
 }
 
-.dokuwiki .header_left {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 350px;
-    height: 130px;
-    background: url(images/titlebackground_left.png) no-repeat top left;
-    z-index: 1;
+.dokuwiki .header {
+    border-radius: 20px;
+    background: #154b99;
+    background: -moz-linear-gradient(left,  #154b99 0%, #3366cc 25%, #3366cc 75%, #6994e1 82%, #afcffc 96%, #88aeed 100%);
+    background: -webkit-linear-gradient(left,  #154b99 0%,#3366cc 25%,#3366cc 75%,#6994e1 82%,#afcffc 96%,#88aeed 100%);
+    background: -o-linear-gradient(left,  #154b99 0%,#3366cc 25%,#3366cc 75%,#6994e1 82%,#afcffc 96%,#88aeed 100%);
+    background: -ms-linear-gradient(left,  #154b99 0%,#3366cc 25%,#3366cc 75%,#6994e1 82%,#afcffc 96%,#88aeed 100%);
+    background: linear-gradient(to right,  #154b99 0%,#3366cc 25%,#3366cc 75%,#6994e1 82%,#afcffc 96%,#88aeed 100%);
+    min-height: 120px;
+    min-width: 825px;
+    position: relative;
+    z-index: 0;
 }
 
 .dokuwiki .logo {
     position: absolute;
-    top: 45px;
-    left: 30px;
+    top: 40px;
+    left: 25px;
     font-size: 250%;
     font-weight: bold;
     text-align: left;
@@ -55,20 +59,10 @@
     letter-spacing: 2pt;
 }
 
-.dokuwiki .header_right {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 475px;
-    height: 130px;
-    background: url(images/titlebackground_right.png) no-repeat top right;
-    z-index: 1;
-}
-
 .dokuwiki .pagename {
     position: absolute;
-    top: 45px;
-    right: 30px;
+    top: 40px;
+    right: 25px;
     font-size: 200%;
     font-weight: bolder;
     color: __background_alt__;
@@ -83,7 +77,7 @@
 }
 
 .dokuwiki .pagename a {
-    color: __extern__ !important;
+    color: __text_alt__ !important;
     text-decoration: none !important;
 }
 
@@ -117,20 +111,17 @@
 .dokuwiki #tab__nav a {
     display: block;
     color: __background_alt__;
-
-    background: #87a5d0;
+    background: #7799c8;
     background: -moz-linear-gradient(top,  #b1c5e1 0%, #b1c5e1 10%, #87a5d0 11%, #87a5d0 55%, #7799c8 56%, #7799c8 100%);
     background: -webkit-linear-gradient(top,  #b1c5e1 0%,#b1c5e1 10%,#87a5d0 11%,#87a5d0 55%,#7799c8 56%,#7799c8 100%);
     background: -o-linear-gradient(top,  #b1c5e1 0%,#b1c5e1 10%,#87a5d0 11%,#87a5d0 55%,#7799c8 56%,#7799c8 100%);
     background: -ms-linear-gradient(top,  #b1c5e1 0%,#b1c5e1 10%,#87a5d0 11%,#87a5d0 55%,#7799c8 56%,#7799c8 100%);
     background: linear-gradient(to bottom,  #b1c5e1 0%,#b1c5e1 10%,#87a5d0 11%,#87a5d0 55%,#7799c8 56%,#7799c8 100%);
-
     margin: 0;
     padding: 3px 10px 1px;
     border: solid #5a78a4;
     border-width: 1px 1px 0;
     border-radius: 7px 7px 0 0;
-
 }
 
 .dokuwiki #tab__nav .curid a {
@@ -139,7 +130,6 @@
     padding: 3px 10px 2px;
     background: #fff none;
 }
-
 
 
 /* ---------------  blog and page includes ---------------- */
