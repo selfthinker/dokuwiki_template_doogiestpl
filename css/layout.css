@@ -110,7 +110,7 @@
 .dokuwiki #tab__nav {
     position: absolute;
     left: 50%;
-    bottom: 0px;
+    bottom: -5px;
     width: 800px;
     margin-left: -400px;
     z-index: 5;
