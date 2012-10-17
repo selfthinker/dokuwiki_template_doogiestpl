@@ -229,6 +229,14 @@ body {
     line-height: 1;
     margin: 0;
     vertical-align: middle;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.dokuwiki input::-moz-focus-inner,
+.dokuwiki button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
 }
 
 .dokuwiki input.edit,
@@ -240,7 +248,7 @@ body {
     font-size: 100%;
     border: 1px solid __border__;
     margin: 1px;
-    padding: 0.20em 0.3em;
+    padding: 0.2em 0.3em;
     display: inline;
 }
 
@@ -256,11 +264,6 @@ body {
     color: __text__;
     background: __background__ url(images/buttonshadow.png) repeat-x bottom;
     cursor: pointer;
-    padding: 0.125em 0.4em;
-}
-* html .dokuwiki input.button,
-* html .dokuwiki button.button {
-    height: 1.8em;
 }
 
 .dokuwiki div.secedit input.button {
