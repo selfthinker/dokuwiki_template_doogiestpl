@@ -272,6 +272,13 @@ div.footerinc {
     margin-top: 1em;
 }
 
+div.footerinc div.license {
+    display: inline;
+}
+div.footerinc div.license img.medialeft {
+    float: none;
+}
+
 .footerinc a img {
     opacity: 0.5;
     border: 0;
