@@ -1,0 +1,307 @@
+/**
+ * This file provides the most basic styles.
+ *
+ */
+
+* { padding: 0; margin: 0; }
+
+body {
+    font: 80% "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
+    background-color: __background__;
+    color: __text__;
+}
+
+
+/*____________ headers ____________*/
+
+/* general headline setup */
+.dokuwiki h1,
+.dokuwiki h2,
+.dokuwiki h3,
+.dokuwiki h4,
+.dokuwiki h5 {
+    color: __text__;
+    background-color: inherit;
+    font-size: 100%;
+    font-weight: normal;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #B0B0FF;
+    clear: left;
+}
+[dir=rtl] .dokuwiki h1,
+[dir=rtl] .dokuwiki h2,
+[dir=rtl] .dokuwiki h3,
+[dir=rtl] .dokuwiki h4,
+[dir=rtl] .dokuwiki h5 {
+        clear: right;
+}
+
+/* special headlines */
+.dokuwiki h1 {
+    font-size: 160%;
+    margin-left: 0px;
+    font-weight: bold;
+}
+.dokuwiki h2 {
+    font-size: 150%;
+    margin-left: 0px;
+}
+.dokuwiki h3 {
+    font-size: 140%;
+    margin-left: 0px;
+    border-bottom: none;
+    font-weight: bold;
+}
+.dokuwiki h4 {
+    font-size: 120%;
+    margin-left: 0px;
+    border-bottom: none;
+    font-weight: bold;
+}
+.dokuwiki h5 {
+    font-size: 100%;
+    margin-left: 0px;
+    border-bottom: none;
+    font-weight: bold;
+}
+
+.dokuwiki h1 a,
+.dokuwiki h2 a,
+.dokuwiki h3 a,
+.dokuwiki h4 a,
+.dokuwiki h5 a,
+.dokuwiki a.nolink {
+    color: __text__ !important;
+    text-decoration: none !important;
+}
+
+
+/*____________ basic margins and paddings ____________*/
+
+.dokuwiki p {
+    margin-bottom: 0.5em;
+}
+
+.dokuwiki blockquote,
+.dokuwiki table,
+.dokuwiki pre {
+    margin: 0 0 1.0em 0;
+}
+
+
+/*____________ lists ____________*/
+
+.dokuwiki ul,
+.dokuwiki ol {
+    line-height: 1.5em;
+    list-style-image: none;
+    margin: 0 0 0.5em 1.5em;
+    color: __text_alt__;
+}
+[dir=rtl] .dokuwiki ul,
+[dir=rtl] .dokuwiki ol {
+    margin: 0 1.5em 0.5em 0;
+}
+
+/* unordered lists */
+.dokuwiki ul {
+    list-style-type: square;
+}
+
+/* ordered lists */
+.dokuwiki ol {
+    font-weight: bold;
+}
+
+/* no bottom gap in between and smaller left margin for nested lists */
+.dokuwiki li ul,
+.dokuwiki li ol {
+    margin: 0 0 0 1.5em;
+}
+[dir=rtl] .dokuwiki li ul,
+[dir=rtl] .dokuwiki li ol {
+    margin: 0 1.5em 0 0;
+}
+
+/* the list items overriding the ul/ol definition */
+.dokuwiki .li {
+    color: __text__;
+    font-weight: normal;
+}
+
+.dokuwiki ol { list-style-type: decimal; }
+.dokuwiki ol ol { list-style-type: upper-roman; }
+.dokuwiki ol ol ol { list-style-type: lower-alpha; }
+.dokuwiki ol ol ol ol { list-style-type: lower-greek; }
+
+
+/*____________ tables ____________*/
+
+.dokuwiki table {
+    font-size: 100%;
+    background-color: __background__;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+.dokuwiki table th {
+    padding: 3px;
+    border: 1px solid __border__;
+    background-color: __background_alt__;
+}
+
+.dokuwiki table td {
+    padding: 3px;
+    border: 1px solid __border__;
+}
+
+
+/*____________ links ____________*/
+
+.dokuwiki a:link,
+.dokuwiki a:visited {
+    color: __extern__;
+    text-decoration: none;
+}
+.dokuwiki a:hover,
+.dokuwiki a:active,
+.dokuwiki a:focus {
+    color: __text__;
+    text-decoration: underline;
+}
+
+
+/*____________ misc ____________*/
+
+.dokuwiki img {
+    border: 0;
+}
+
+.dokuwiki hr {
+    border: 0px;
+    border-top: 1px solid __border__;
+    text-align: center;
+    height: 0px;
+}
+
+.dokuwiki acronym {
+    cursor: help;
+    border-bottom: 1px dotted __text__;
+}
+
+/* inline code words */
+.dokuwiki code {
+    font-size: 120%;
+}
+
+.dokuwiki pre {
+    font-size: 120%;
+    padding: 0.5em;
+    border: 1px dashed __border__;
+    color: __text__;
+    overflow: auto;
+    direction: ltr;
+    text-align: left;
+}
+
+.dokuwiki blockquote {
+    border-left: 2px solid __border__;
+    padding-left: 3px;
+}
+[dir=rtl] .dokuwiki blockquote {
+    border-left-width: 0;
+    padding-left: 0;
+    border-right: 2px solid __border__;
+    padding-right: 3px;
+}
+
+
+/*____________ forms ____________*/
+
+.dokuwiki input,
+.dokuwiki textarea,
+.dokuwiki button,
+.dokuwiki select,
+.dokuwiki optgroup,
+.dokuwiki option {
+    font: inherit;
+    line-height: 1;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.dokuwiki input.edit,
+.dokuwiki select.edit,
+.dokuwiki input.missing,
+.dokuwiki input.button,
+.dokuwiki button.button,
+.dokuwiki .qq-upload-button {
+    font-size: 100%;
+    border: 1px solid __border__;
+    margin: 1px;
+    padding: 0.20em 0.3em;
+    display: inline;
+}
+
+.dokuwiki input.edit,
+.dokuwiki select.edit {
+    color: __text__;
+    background:  __background__ url(images/inputshadow.png) repeat-x top;
+}
+
+.dokuwiki input.button,
+.dokuwiki button.button,
+.dokuwiki .qq-upload-button {
+    color: __text__;
+    background: __background__ url(images/buttonshadow.png) repeat-x bottom;
+    cursor: pointer;
+    padding: 0.125em 0.4em;
+}
+* html .dokuwiki input.button,
+* html .dokuwiki button.button {
+    height: 1.8em;
+}
+
+.dokuwiki div.secedit input.button {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    float: right;
+}
+[dir=rtl] .dokuwiki div.secedit input.button {
+    float: left;
+}
+button.toolbutton {
+    background:  __background__ url(images/buttonshadow.png) repeat-x bottom;
+    padding: 0px;
+    margin: 0 1px 0 0;
+    border: 1px solid __border__;
+    cursor: pointer;
+}
+
+.dokuwiki select.edit {
+    padding: 0.1em 0;
+}
+
+.dokuwiki textarea.edit {
+    font-family: monospace;
+    font-size: 14px;
+    color: __text__;
+    background: __background__ url(images/inputshadow.png) repeat-x top;
+    border: 1px solid __border__;
+    padding: 0.3em 0 0 0.3em;
+}
+[dir=rtl] .dokuwiki textarea.edit {
+    padding: 0.3em 0.3em 0 0;
+}
+
+.dokuwiki textarea.edit[disabled],
+.dokuwiki textarea.edit[readonly],
+.dokuwiki input.edit[disabled],
+.dokuwiki input.edit[readonly],
+.dokuwiki input.button[disabled],
+.dokuwiki select.edit[disabled] {
+    background-color: __background_neu__!important;
+    color: __text_neu__!important;
+}

@@ -31,7 +31,7 @@ if (!defined('DOKU_INC')) die();
 </head>
 
 <body>
-<div class="dokuwiki">
+<div class="dokuwiki" id="dokuwiki__detail">
   <?php html_msgarea()?>
 
   <div class="page">

@@ -1,0 +1,435 @@
+/**
+ * This file provides the main design styles for the page content.
+ *
+ * @author Anika Henke <anika@selfthinker.org>
+ * @author Andreas Gohr <andi@splitbrain.org>
+ */
+
+/*____________ section indenting ____________
+
+.dokuwiki div.level1 {margin-left: 3px;}
+.dokuwiki div.level2 {margin-left: 23px;}
+.dokuwiki div.level3 {margin-left: 43px;}
+.dokuwiki div.level4 {margin-left: 63px;}
+.dokuwiki div.level5 {margin-left: 83px;}
+*/
+
+
+/*____________ links to wiki pages (addition to _links) ____________*/
+
+/* existing wikipage */
+.dokuwiki a.wikilink1 {
+    color: __existing__ !important;
+}
+
+/* not existing wikipage */
+.dokuwiki a.wikilink2 {
+    color: __missing__ !important;
+}
+
+
+/* email link */
+.dokuwiki a.mail {
+    background-image: url(images/mail_icon.gif);
+}
+
+/* external link */
+.dokuwiki a.urlextern {
+    background-image: url(images/link_icon.gif);
+}
+
+/* windows share */
+.dokuwiki a.windows {
+    background-image: url(images/windows.gif);
+}
+
+.dokuwiki a.urlextern:link,
+.dokuwiki a.windows:link,
+.dokuwiki a.interwiki:link {
+    color: __extern__;
+}
+.dokuwiki a.urlextern:visited,
+.dokuwiki a.windows:visited,
+.dokuwiki a.interwiki:visited {
+    color: purple;
+}
+.dokuwiki a.urlextern:hover,
+.dokuwiki a.urlextern:active,
+.dokuwiki a.windows:hover,
+.dokuwiki a.windows:active,
+.dokuwiki a.interwiki:hover,
+.dokuwiki a.interwiki:active {
+    color: __text__;
+}
+
+
+/*____________ images ____________*/
+
+/* embedded images (styles are already partly set in DokuWiki's lib/styles/all.css) */
+.dokuwiki img.media {
+    margin: 3px;
+}
+
+.dokuwiki img.medialeft {
+    margin: 0 1.5em 0 0;
+}
+
+.dokuwiki img.mediaright {
+    margin: 0 0 0 1.5em;
+}
+
+.dokuwiki img.mediacenter {
+}
+
+
+/*____________ code ____________*/
+
+.dokuwiki pre.pre, /* code blocks by indention */
+.dokuwiki pre.code { /* code blocks by code tag */
+    background-color: __background_other__;
+}
+
+/* code blocks by file tag */
+.dokuwiki pre.file {
+    background-color: __background_alt__;
+}
+
+/* filenames for file and code blocks */
+.dokuwiki dl.file,
+.dokuwiki dl.code {
+    margin-top: 2em;
+    margin-bottom: 2.5em;
+}
+
+.dokuwiki dl.file dt,
+.dokuwiki dl.code dt {
+    border: 1px dashed __border__;
+    display: inline;
+    padding: 0.1em 1em;
+    margin-left: 2em;
+}
+[dir=rtl] .dokuwiki dl.file dt,
+[dir=rtl] .dokuwiki dl.code dt {
+    margin-left: 0;
+    margin-right: 2em;
+}
+
+.dokuwiki dl.code dt a,
+.dokuwiki dl.file dt a {
+    color: __text__;
+}
+
+.dokuwiki dl.code dt {
+    background-color: __background_other__;
+    border-bottom: 1px solid __background_other__;
+}
+
+.dokuwiki dl.file dt {
+    background-color: __background_alt__;
+    border-bottom: 1px solid __background_alt__;
+}
+
+
+/*____________ changes to _toc ____________*/
+
+.dokuwiki div.toc, /* old */
+#dw__toc /* new */ {
+    margin: 0 0 0 2em;
+    width: 200px;
+    font-size: 80%;
+    background-color: __background__;
+    z-index: 99;
+    clear: both;
+}
+[dir=rtl] .dokuwiki div.toc, /* old */
+[dir=rtl] #dw__toc /* new */ {
+    margin: 0 2em 0 0;
+}
+
+.dokuwiki div.tocheader, /* old */
+#dw__toc h3 /* new */ {
+    border: 1px solid __border__;
+    background-color: __background_alt__;
+    padding: 3px;
+    margin: 0 0 2px;
+}
+
+.dokuwiki .toc span.toc_open, /* old */
+.dokuwiki .toc span.toc_close, /* old */
+#dw__toc h3 strong /* new */ {
+    border: 0.4em solid __background_alt__;
+    margin: 0.4em 3px 0 0;
+}
+
+.dokuwiki .toc span.toc_open span, /* old */
+.dokuwiki .toc span.toc_close span, /* old */
+#dw__toc h3 strong span /* new */ {
+    display: none;
+}
+
+#dw__toc h3.closed strong,
+.dokuwiki span.toc_open {
+    margin-top: 0.4em;
+    border-top: 0.4em solid __text__;
+}
+
+#dw__toc h3.open strong,
+.dokuwiki span.toc_close {
+    margin-top: 0;
+    border-bottom: 0.4em solid __text__;
+}
+
+.dokuwiki #toc__inside,
+#dw__toc > div {
+    border: 1px solid __border__;
+    background-color: __background__;
+    padding: 0.5em 0 0.7em 0;
+}
+
+.dokuwiki #toc__inside ul, /* old */
+#dw__toc ul /* new */ {
+    list-style-type: none;
+    list-style-image: none;
+    line-height: 1.2em;
+    padding-left: 1em;
+    margin: 0;
+}
+[dir=rtl] .dokuwiki #toc__inside ul, /* old */
+[dir=rtl] #dw__toc ul /* new */ {
+    padding-left: 0;
+    padding-right: 1em;
+}
+
+.dokuwiki #toc__inside ul li, /* old */
+#dw__toc ul li /* new */ {
+    background: transparent url(images/tocdot2.gif) 0 0.6em no-repeat;
+    padding-left: 0.4em;
+}
+[dir=rtl] .dokuwiki #toc__inside ul li, /* old */
+[dir=rtl] #dw__toc ul li /* new */ {
+    background-position: right 0.6em;
+    padding-left: 0;
+    padding-right: 0.4em;
+}
+
+.dokuwiki #toc__inside ul li.clear, /* old */
+#dw__toc ul li.clear /* new */ {
+    background-image: none;
+}
+
+.dokuwiki #toc__inside ul li a:link, /* old */
+.dokuwiki #toc__inside ul li a:visited, /* old */
+#dw__toc ul li a:link /* new */,
+#dw__toc ul li a:visited /* new */ {
+    color: __extern__;
+}
+
+.dokuwiki #toc__inside ul li a:hover, /* old */
+.dokuwiki #toc__inside ul li a:active, /* old */
+#dw__toc ul li a:hover /* new */,
+#dw__toc ul li a:active /* new */ {
+    color: __text__;
+}
+
+
+.dokuwiki ul.idx li {
+    list-style-image: none;
+}
+.dokuwiki ul.idx li.open {
+    list-style-image: url(images/open.gif);
+}
+.dokuwiki ul.idx li.closed {
+    list-style-image: url(images/closed.gif);
+}
+[dir=rtl] .dokuwiki ul.idx li.closed {
+    list-style-image: url(images/closed-rtl.gif);
+}
+
+
+/*____________ changes to _footnotes ____________*/
+
+.dokuwiki div.footnotes {
+    clear: both;
+    border-top: 1px solid __border__;
+    padding-left: 1em;
+    margin-top: 1em;
+}
+[dir=rtl] .dokuwiki div.footnotes {
+    padding-left: 0;
+    padding-right: 1em;
+}
+
+.dokuwiki div.fn {
+    font-size: 90%;
+}
+
+/* overcome IE issue with one line code or file boxes which require h. scrolling */
+* html .insitu-footnote pre.code,
+* html .insitu-footnote pre.file {
+    padding-bottom: 18px;
+}
+
+
+/*____________ changes to _search ____________*/
+
+.dokuwiki div.search_quickresult {
+    margin: 0 0 15px 30px;
+    padding: 0 10px 10px 0;
+    border-bottom: 1px dashed __border__;
+}
+[dir=rtl] .dokuwiki div.search_quickresult {
+    margin: 0 30px 15px 0;
+    padding: 0 0 10px 10px;
+}
+.dokuwiki div.search_quickresult h3 {
+    margin: 0 0 1.0em 0;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.dokuwiki div.search_quickresult {
+    margin: 0 0 0.5em 1.0em;
+}
+[dir=rtl] .dokuwiki div.search_quickresult {
+    margin: 0 1.0em 0.5em 0;
+}
+
+.dokuwiki div.search_quickresult li {
+    margin: 0 1.0em 0 1.0em;
+    width: 30%;
+}
+
+
+.dokuwiki .search_result {
+    margin-bottom: 6px;
+    padding: 0 10px 0 30px;
+}
+[dir=rtl] .dokuwiki .search_result {
+    padding: 0 30px 0 10px;
+}
+
+.dokuwiki .search_snippet {
+    color: __text_other__;
+    font-size: 12px;
+    margin-left: 20px;
+}
+[dir=rtl] .dokuwiki .search_snippet {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+
+.dokuwiki form.search div.ajax_qsearch {
+    position: absolute;
+    right: 0px;
+    bottom: 25px;
+    left: auto;
+    top: auto;
+    width: 200px;
+    font-size: 80%;
+    padding: 0;
+    opacity: 0.9;
+    display: none;
+}
+
+.dokuwiki form.search div.ajax_qsearch ul {
+    margin: 0 0 0.5em 1.5em !important;
+}
+[dir=rtl] .dokuwiki form.search div.ajax_qsearch ul {
+    margin: 0 1.5em 0.5em 0 !important;
+}
+.dokuwiki form.search div.ajax_qsearch ul li {
+    display: list-item !important;
+}
+
+
+/*____________ changes to _edit ____________*/
+
+.dokuwiki div.section_highlight {
+    background-color: __background_alt__;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+}
+
+.dokuwiki div.preview {
+    background-color: __background_neu__;
+    margin: 0 0 0 2em;
+    padding: 4px;
+    border: 1px dashed __text__;
+}
+[dir=rtl] .dokuwiki div.preview {
+    margin: 0 2em 0 0;
+}
+
+#dw__editform div.license {
+  clear: left;
+  font-size: 90%;
+}
+
+
+/*____________ changes to _imgdetail ____________*/
+
+#dokuwiki__detail {
+    padding: 0;
+}
+#dokuwiki__detail .page {
+    overflow: hidden;
+}
+
+#dokuwiki__detail div.img_detail {
+    float: none;
+}
+#dokuwiki__detail div.img_detail dl dt {
+    font-weight: bold;
+    background-color: __background_alt__;
+}
+#dokuwiki__detail div.img_detail dl dd {
+    background-color: __background_neu__;
+}
+
+
+/*____________ changes to _media_popup ____________*/
+
+#media__manager h1,
+#media__manager h2 {
+    margin-top: 0;
+}
+
+#media__tree ul {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/*____________ misc ____________*/
+
+
+.dokuwiki div.nothing {
+    text-align: center;
+    margin: 2em;
+}
+
+.dokuwiki span.user {
+    color: __text_other__;
+    font-size: 90%;
+}
+
+.dokuwiki li.minor {
+    color: __text_neu__;
+    font-style: italic;
+    opacity: 1;
+}
+
+
+.JSpopup {
+    font-size: 80%;
+    line-height: 1.2em;
+    border: 1px solid __border__;
+    background-color: __background_other__;
+    text-align: left;
+    padding: 4px;
+}
+[dir=rtl] .JSpopup {
+    text-align: right;
+}
