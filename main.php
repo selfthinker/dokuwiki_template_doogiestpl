@@ -56,11 +56,18 @@ if (!defined('DOKU_INC')) die();
       <div class="logo">
         <?php tpl_link(wl(),$conf['title'],'name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[ALT+H]"')?>
       </div>
-      <div class="pagename">
-        [[<?php tpl_link(wl($ID,'do=backlink'),tpl_pagetitle($ID,true),'title="'.$lang['btn_backlink'].'"')?>]]
+      <div class="tools <?php echo (tpl_getConf('searchToTop')) ? 'withSearch' : '' ;?>">
+        <div class="pagename">
+          [[<?php tpl_link(wl($ID,'do=backlink'),tpl_pagetitle($ID,true),'title="'.$lang['btn_backlink'].'"')?>]]
+        </div>
+        <?php if (tpl_getConf('searchToTop')): ?>
+          <div class="searchbox">
+            <?php tpl_searchform(); ?>
+          </div>
+        <?php endif; ?>
       </div>
 
-      <?php if(tpl_getConf('tabsPage')): ?>
+      <?php if (tpl_getConf('tabsPage')): ?>
         <div class="tabnav" id="tab__nav">
           <?php tpl_include_page(tpl_getConf('tabsPage'), 1, 1) ?>
         </div>
@@ -86,7 +93,7 @@ if (!defined('DOKU_INC')) die();
 
 
   <!-- footer -->
-  <div class="stylefoot">
+  <div class="stylefoot <?php echo (tpl_getConf('searchToTop')) ? 'withSearch' : '' ;?>">
 
     <?php tpl_includeFile('pagefooter.html')?>
 
@@ -117,10 +124,12 @@ if (!defined('DOKU_INC')) die();
       </div>
 
       <!--  search form -->
-      <div class="bar-right" id="bar__bottomright" style="position:relative">
-        <?php
-          tpl_searchform();
-        ?>
+      <div class="bar-right" id="bar__bottomright">
+        <?php if (!tpl_getConf('searchToTop')): ?>
+          <div class="searchbox">
+            <?php tpl_searchform(); ?>
+          </div>
+        <?php endif; ?>
       </div>
 
       <div class="clearer"></div>

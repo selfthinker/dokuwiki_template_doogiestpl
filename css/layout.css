@@ -38,19 +38,20 @@
 }
 
 .dokuwiki .logo {
-    position: absolute;
-    top: 40px;
-    left: 25px;
+    padding-top: 40px;
+    padding-left: 25px;
     font-size: 250%;
     font-weight: bold;
     text-align: left;
     white-space: nowrap;
     z-index: 2;
+    float: left;
 }
 [dir=rtl] .dokuwiki .logo {
-    left: auto;
-    right: 30px;
+    padding-left: 0;
+    padding-right: 30px;
     text-align: right;
+    float: right;
 }
 
 .dokuwiki .logo a {
@@ -60,27 +61,49 @@
     letter-spacing: 2pt;
 }
 
-.dokuwiki .pagename {
-    position: absolute;
-    top: 40px;
-    right: 25px;
-    font-size: 200%;
-    font-weight: bolder;
-    color: __background_alt__;
+.dokuwiki .header .tools {
+    padding-top: 40px;
+    padding-right: 25px;
     text-align: right;
     white-space: nowrap;
     z-index: 2;
+    float: right;
 }
-[dir=rtl] .dokuwiki .pagename {
-    right: auto;
-    left: 30px;
+[dir=rtl] .dokuwiki .header .tools {
+    padding-right: 0;
+    padding-left: 30px;
     text-align: left;
+    float: left;
+}
+.dokuwiki .header .tools.withSearch {
+    padding-top: 20px;
+}
+
+.dokuwiki .pagename {
+    font-size: 200%;
+    font-weight: bolder;
+    color: __background_alt__;
+}
+.dokuwiki .withSearch .pagename {
+    font-size: 120%;
+    margin-bottom: 10px;
 }
 
 .dokuwiki .pagename a {
     color: __text_alt__ !important;
     text-decoration: none !important;
 }
+
+.dokuwiki .searchbox {
+    position: relative;
+}
+.dokuwiki .tools .searchbox {
+    clear: right;
+}
+[dir=rtl] .dokuwiki .tools .searchbox {
+    clear: left;
+}
+
 
 /* ---------------  tab navigation ---------------- */
 
@@ -205,10 +228,14 @@
 }
 
 .dokuwiki #bar__bottom {
-    padding: 0 15px 1em 15px;
+    padding: 0 10px 1em;
     margin-top: 5px;
 }
 
+.dokuwiki .withSearch #bar__bottom {
+    padding-top: 1em;
+    margin-top: 5px;
+}
 
 /* ------------- File Metadata ----------------------- */
 
@@ -230,6 +257,11 @@
 
 .dokuwiki div.meta div.doc {
     text-align: center;
+}
+.dokuwiki .withSearch div.meta div.doc {
+    text-align: right;
+    float: right;
+    margin-top: -5px;
 }
 
 
