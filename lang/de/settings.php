@@ -3,6 +3,4 @@
  * German language file for Doogies blue Dokuwiki template configuration
  */
 
-$lang['navbar_recent'] = 'Reiter fuer letzte Aenderungen anzeigen';
-
-
+$lang['tabsPage'] = 'Name der Seite für die Reiternavigation (leer lassen, um Funktion zu deaktivieren)';

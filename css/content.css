@@ -19,12 +19,12 @@
 
 /* existing wikipage */
 .dokuwiki a.wikilink1 {
-    color: __existing__ !important;
+    color: __existing__;
 }
 
 /* not existing wikipage */
 .dokuwiki a.wikilink2 {
-    color: __missing__ !important;
+    color: __missing__;
 }
 
 
@@ -330,6 +330,10 @@
     padding: 0;
     opacity: 0.9;
     display: none;
+}
+[dir=rtl] .dokuwiki form.search div.ajax_qsearch {
+    right: auto;
+    left: 0;
 }
 
 .dokuwiki form.search div.ajax_qsearch ul {

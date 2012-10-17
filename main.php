@@ -2,28 +2,14 @@
 /**
  * Doogies Dokuwiki Template
  *
- * You should leave the doctype at the very top - It should
- * always be the very first line of a document.
- *
  * @link   http://wiki.splitbrain.org/wiki:tpl:templates
  * @author Andreas Gohr <andi@splitbrain.org>
  * @author Robert Rackl
+ * @author Anika Henke <anika@selfthinker.org>
  */
 
 // must be run from within DokuWiki
 if (!defined('DOKU_INC')) die();
-
-//get needed language array
-include DOKU_TPLINC."lang/en/lang.php";
-//overwrite English language values with available translations
-if (!empty($conf["lang"]) &&
-    $conf["lang"] != "en" &&
-    file_exists(DOKU_TPLINC."/lang/".$conf["lang"]."/lang.php")){
-    //get language file (partially translated language files are no problem
-    //cause non translated stuff is still existing as English array value)
-    include DOKU_TPLINC."/lang/".$conf["lang"]."/lang.php";
-}
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -37,65 +23,9 @@ if (!empty($conf["lang"]) &&
   </title>
 
   <?php tpl_metaheaders()?>
-
   <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
-
   <?php tpl_includeFile('meta.html')?>
 </head>
-
-<?php
-/**
- * prints a horizontal navigation bar (composed of <li> items and some CSS tricks)
- * with the current active item highlited
- */
-function tpl_tabnavi(){
-  global $ID;
-  global $ACT;
-  global $lang;
-
-  // collect the five config vars into one array
-  $navbar_tabs = array();
-  for ($i = 1; $i <= 5; $i++) {
-    $title  = tpl_getConf('navbar_tab'.$i.'_title');
-    $target = tpl_getConf('navbar_tab'.$i.'_target');
-    $navbar_tabs[$title] = $target;
-  }
-
-  echo("<ul>\n");
-  foreach ($navbar_tabs as $title => $target) {
-    // only add tab if title and target are filled.
-    if (empty($title) || empty($target)) {
-      continue;
-    }
-
-    //check is user has enough rights to view target page (taken from fulltext.php)
-    $targetID = cleanID($target);
-    if (isHiddenPage($targetID) || auth_quickaclcheck($targetID) < AUTH_READ) {
-      continue;
-    }
-
-    echo '<li';
-    if (strcasecmp($ID, $target) == 0 && $ACT == 'show') {  // if current page == this tab then show active style
-      echo ' id="current"><div id="current_inner">'.$title.'</div>';
-    } else {
-      echo '>';
-      tpl_link(wl($targetID), $title);
-    }
-    echo "</li>\n";
-  }
-  // add link to recent page, if template config variable 'navbar_recent' is true
-  if (tpl_getConf('navbar_recent')) {
-    if ($ACT == 'recent') {
-      echo('<li id="current"><div id="current_inner">'.$lang['btn_recent'].'</div></li>');
-    } else {
-      echo('<li>'); tpl_actionlink('recent','','',$lang['btn_recent']); echo("</li>\n");
-    }
-  }
-  echo("</ul>\n");
-}
-?>
-
-
 <body>
 <?php tpl_includeFile('topheader.html')?>
 <?php html_msgarea() ?>
@@ -132,9 +62,11 @@ function tpl_tabnavi(){
         [[<?php tpl_link(wl($ID,'do=backlink'),tpl_pagetitle($ID,true),'title="'.$lang['btn_backlink'].'"')?>]]
       </div>
 
-      <div id="tabnavi" class="tabnavi">
-        <?php tpl_tabnavi() ?>
-      </div>
+      <?php if(tpl_getConf('tabsPage')): ?>
+        <div class="tabnav" id="tab__nav">
+          <?php tpl_include_page(tpl_getConf('tabsPage'), 1, 1) ?>
+        </div>
+      <?php endif; ?>
 
       <div class="clearer"></div>
       <?php tpl_includeFile('header.html')?>
@@ -180,7 +112,7 @@ function tpl_tabnavi(){
             if($_SERVER['REMOTE_USER']){   // show only if user is logged in
               tpl_button('revert');
               tpl_button('edit');
-              tpl_actiondropdown($lang['more_actions']);
+              tpl_actiondropdown(tpl_getLang('more_actions'));
             }
           }
         ?>

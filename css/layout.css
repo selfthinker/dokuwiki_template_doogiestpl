@@ -18,7 +18,7 @@
     margin: 5px;
     height: 130px;
     min-width: 825px;
-    position: relative; /* important for positioning of .tabnavi */
+    position: relative; /* important for positioning of #tab__navi */
     z-index: 0;
 }
 
@@ -89,11 +89,7 @@
 
 /* ---------------  tab navigation ---------------- */
 
-/**
- * CSS centering trick by http://www.bluerobot.com/web/css/center2.html
- * tabs by http://alistapart.com/articles/slidingdoors/
- */
-.dokuwiki .tabnavi {
+.dokuwiki #tab__nav {
     position: absolute;
     left: 50%;
     bottom: 0px;
@@ -102,46 +98,49 @@
     z-index: 5;
 }
 
-
-.dokuwiki #tabnavi ul {
+.dokuwiki #tab__nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.dokuwiki #tabnavi li {
+.dokuwiki #tab__nav li {
     float: left;
-    padding: 0 0 0 7px;
+    padding: 0;
     margin: 0 10px 0 0;
-    background: url(images/rounded-corners-left.png) no-repeat top left;
 }
-[dir=rtl] .dokuwiki #tabnavi li {
+[dir=rtl] .dokuwiki #tab__nav li {
     float: right;
     margin: 0 0 0 10px;
 }
 
-.dokuwiki #tabnavi a {
+.dokuwiki #tab__nav a {
     display: block;
     color: __background_alt__;
+
+    background: #87a5d0;
+    background: -moz-linear-gradient(top,  #b1c5e1 0%, #b1c5e1 10%, #87a5d0 11%, #87a5d0 55%, #7799c8 56%, #7799c8 100%);
+    background: -webkit-linear-gradient(top,  #b1c5e1 0%,#b1c5e1 10%,#87a5d0 11%,#87a5d0 55%,#7799c8 56%,#7799c8 100%);
+    background: -o-linear-gradient(top,  #b1c5e1 0%,#b1c5e1 10%,#87a5d0 11%,#87a5d0 55%,#7799c8 56%,#7799c8 100%);
+    background: -ms-linear-gradient(top,  #b1c5e1 0%,#b1c5e1 10%,#87a5d0 11%,#87a5d0 55%,#7799c8 56%,#7799c8 100%);
+    background: linear-gradient(to bottom,  #b1c5e1 0%,#b1c5e1 10%,#87a5d0 11%,#87a5d0 55%,#7799c8 56%,#7799c8 100%);
+
     margin: 0;
-    padding: 4px 12px 0 5px;
-    background: url(images/rounded-corners-right.png) no-repeat top right;
+    padding: 3px 10px 1px;
+    border: solid #5a78a4;
+    border-width: 1px 1px 0;
+    border-radius: 7px 7px 0 0;
 
 }
 
-.dokuwiki #tabnavi #current {
+.dokuwiki #tab__nav .curid a {
     color: __text__;
     font-weight: bolder;
-    padding: 0 0 0 7px;
-    margin: 0 10px 0 0;
-    background: url(images/rounded-corners-left-active.png) no-repeat top left;
+    padding: 3px 10px 2px;
+    background: #fff none;
 }
 
-.dokuwiki #tabnavi #current_inner {
-    margin: 0;
-    padding: 4px 12px 1px 5px;
-    background: url(images/rounded-corners-right-active.png) no-repeat top right;
-}
+
 
 /* ---------------  blog and page includes ---------------- */
 
