@@ -1,0 +1,40 @@
+
+/* make pagename smaller */
+.dokuwiki .pagename {
+    font-size: 100%;
+    margin-bottom: 10px;
+}
+.dokuwiki .header .tools {
+    padding-top: 20px;
+}
+
+/* buttons in header.html */
+.dokuwiki .seeng-buttons {
+    float: right;
+    padding-right: 25px;
+    text-align: right;
+    position: relative;
+    bottom: 34px;
+}
+
+.dokuwiki .seeng-buttons a,
+.dokuwiki .seeng-buttons form {
+    display: inline-block;
+    margin-left: 5px;
+}
+*+html .dokuwiki .seeng-buttons a,
+*+html .dokuwiki .seeng-buttons form {
+    display: inline;
+}
+
+.dokuwiki .seeng-buttons form input {
+    vertical-align: baseline;
+}
+
+
+/* don't print these buttons */
+@media print {
+    .dokuwiki .seeng-buttons {
+        display: none;
+    }
+}

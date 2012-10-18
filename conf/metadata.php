@@ -3,5 +3,5 @@
  * (This is a piece of PHP code so PHP syntax applies!)
  */
 
-$meta['tabsPage']    = array('string');
-$meta['searchToTop'] = array('onoff');
+$meta['tabsPage']     = array('string');
+$meta['actionsToTop'] = array('onoff');

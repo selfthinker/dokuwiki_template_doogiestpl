@@ -52,20 +52,46 @@ if (!defined('DOKU_INC')) die();
 
   <div class="clearer"></div>
 
+  <?php if (tpl_getConf('actionsToTop')): ?>
+    <div class="actions">
+      <!-- page actions -->
+      <div class="bar-left" id="bar__bottomleft">
+        <?php
+          global $conf;
+          global $auth;
+          global $lang;
+
+          tpl_button('login');
+          if($conf['useacl'] && $auth){
+            if($_SERVER['REMOTE_USER']){   // show only if user is logged in
+              tpl_button('revert');
+              tpl_button('edit');
+              tpl_actiondropdown(tpl_getLang('more_actions'));
+            }
+          }
+        ?>
+      </div>
+
+      <!-- search form -->
+      <div class="bar-right" id="bar__bottomright">
+          <div class="searchbox">
+            <?php tpl_searchform(); ?>
+          </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+  <?php endif; ?>
+
   <div class="stylehead">
     <div class="header">
       <div class="logo">
         <?php tpl_link(wl(),$conf['title'],'name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[ALT+H]"')?>
       </div>
-      <div class="tools <?php echo (tpl_getConf('searchToTop')) ? 'withSearch' : '' ;?>">
+      <div class="tools">
         <div class="pagename">
           [[<?php tpl_link(wl($ID,'do=backlink'),tpl_pagetitle($ID,true),'title="'.$lang['btn_backlink'].'"')?>]]
         </div>
-        <?php if (tpl_getConf('searchToTop')): ?>
-          <div class="searchbox">
-            <?php tpl_searchform(); ?>
-          </div>
-        <?php endif; ?>
       </div>
 
       <?php if (tpl_getConf('tabsPage')): ?>
@@ -88,13 +114,13 @@ if (!defined('DOKU_INC')) die();
     <!-- ......... wikipage stop  ......... -->
   </div>
 
-  <div class="clearer">&nbsp;</div>
+  <div class="clearer"></div>
 
   <?php flush()?>
 
 
   <!-- footer -->
-  <div class="stylefoot <?php echo (tpl_getConf('searchToTop')) ? 'withSearch' : '' ;?>">
+  <div class="stylefoot">
 
     <?php tpl_includeFile('pagefooter.html')?>
 
@@ -106,34 +132,34 @@ if (!defined('DOKU_INC')) die();
         </div>
       </div>
 
-      <!--  page actions -->
-      <div class="bar-left" id="bar__bottomleft">
-        <?php
-          global $conf;
-          global $auth;
-          global $lang;
+      <?php if (!tpl_getConf('actionsToTop')): ?>
+        <!-- page actions -->
+        <div class="bar-left" id="bar__bottomleft">
+          <?php
+            global $conf;
+            global $auth;
+            global $lang;
 
-          tpl_button('login');
-          if($conf['useacl'] && $auth){
-            if($_SERVER['REMOTE_USER']){   // show only if user is logged in
-              tpl_button('revert');
-              tpl_button('edit');
-              tpl_actiondropdown(tpl_getLang('more_actions'));
+            tpl_button('login');
+            if($conf['useacl'] && $auth){
+              if($_SERVER['REMOTE_USER']){   // show only if user is logged in
+                tpl_button('revert');
+                tpl_button('edit');
+                tpl_actiondropdown(tpl_getLang('more_actions'));
+              }
             }
-          }
-        ?>
-      </div>
+          ?>
+        </div>
 
-      <!--  search form -->
-      <div class="bar-right" id="bar__bottomright">
-        <?php if (!tpl_getConf('searchToTop')): ?>
-          <div class="searchbox">
-            <?php tpl_searchform(); ?>
-          </div>
-        <?php endif; ?>
-      </div>
+        <!-- search form -->
+        <div class="bar-right" id="bar__bottomright">
+            <div class="searchbox">
+              <?php tpl_searchform(); ?>
+            </div>
+        </div>
 
-      <div class="clearer"></div>
+        <div class="clearer"></div>
+      <?php endif; ?>
 
     </div>
 

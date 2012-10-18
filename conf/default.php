@@ -3,5 +3,5 @@
  * (This is a piece of PHP code so PHP syntax applies!)
  */
 
-$conf['tabsPage']    = 'tabs';
-$conf['searchToTop'] = 0;
+$conf['tabsPage']     = 'tabs';
+$conf['actionsToTop'] = 0;

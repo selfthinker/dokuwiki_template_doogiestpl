@@ -336,7 +336,7 @@
     left: 0;
 }
 
-.dokuwiki .tools form.search div.ajax_qsearch {
+.dokuwiki .actions form.search div.ajax_qsearch {
     top: 25px;
     bottom: auto;
 }
