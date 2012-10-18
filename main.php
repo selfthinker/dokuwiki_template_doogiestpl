@@ -95,6 +95,7 @@ if (!defined('DOKU_INC')) die();
       </div>
 
       <?php if (tpl_getConf('tabsPage')): ?>
+        <div class="clearer"></div>
         <div class="tabnav" id="tab__nav">
           <?php tpl_include_page(tpl_getConf('tabsPage'), 1, 1) ?>
         </div>
