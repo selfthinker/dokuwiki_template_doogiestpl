@@ -251,7 +251,6 @@ body {
     border: 1px solid __border__;
     margin: 1px;
     padding: 0.2em 0.3em;
-    display: inline;
 }
 
 .dokuwiki input.edit,
