@@ -10,7 +10,8 @@ if (!defined('DOKU_INC')) die(); // must be run from within DokuWiki
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang']?>" lang="<?php echo $conf['lang']?>" dir="ltr">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang']?>"
+    lang="<?php echo $conf['lang']?>" dir="<?php echo $lang['direction']?>">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>
@@ -45,7 +46,7 @@ if (!defined('DOKU_INC')) die(); // must be run from within DokuWiki
                 $imgNS = getNS($IMG);
                 $authNS = auth_quickaclcheck("$imgNS:*");
                 if ($authNS >= AUTH_UPLOAD) {
-                        echo '<p><a href="'.media_managerURL(array('ns' => $imgNS, 'image' => $IMG)).'">'.$lang['img_manager'].'</a></p>';
+                    echo '<p><a href="'.media_managerURL(array('ns' => $imgNS, 'image' => $IMG)).'">'.$lang['img_manager'].'</a></p>';
                 }
             ?>
 
