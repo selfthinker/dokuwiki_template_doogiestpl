@@ -2,16 +2,12 @@
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php
 /**
- * DokuWiki Default Template
- *
  * This is the template for the media manager popup
  *
- * You should leave the doctype at the very top - It should
- * always be the very first line of a document.
- *
- * @link   http://dokuwiki.org/templates
  * @author Andreas Gohr <andi@splitbrain.org>
  */
+if (!defined('DOKU_INC')) die(); // must be run from within DokuWiki
+@require_once(dirname(__FILE__).'/tpl_functions.php'); /* include hook for template functions */
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang']?>" lang="<?php echo $conf['lang']?>" dir="ltr">
 <head>
@@ -21,7 +17,7 @@
     [<?php echo strip_tags($conf['title'])?>]
   </title>
   <?php tpl_metaheaders()?>
-  <link rel="shortcut icon" href="<?php echo DOKU_TPL?>images/favicon.ico" />
+  <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
 </head>
 
 <body>

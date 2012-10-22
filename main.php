@@ -2,14 +2,13 @@
 /**
  * Doogies Dokuwiki Template
  *
- * @link   http://wiki.splitbrain.org/wiki:tpl:templates
+ * @link   http://dokuwiki.org/template:doogiestpl
  * @author Andreas Gohr <andi@splitbrain.org>
  * @author Robert Rackl
  * @author Anika Henke <anika@selfthinker.org>
  */
 
-// must be run from within DokuWiki
-if (!defined('DOKU_INC')) die();
+if (!defined('DOKU_INC')) die(); // must be run from within DokuWiki
 @require_once(dirname(__FILE__).'/tpl_functions.php'); /* include hook for template functions */
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"

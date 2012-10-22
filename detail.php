@@ -1,19 +1,12 @@
 <?php
 /**
- * DokuWiki Image Detail Template
- *
  * This is the template for displaying image details
  *
- * You should leave the doctype at the very top - It should
- * always be the very first line of a document.
- *
- * @link   http://dokuwiki.org/templates
  * @author Andreas Gohr <andi@splitbrain.org>
  */
 
-// must be run from within DokuWiki
-if (!defined('DOKU_INC')) die();
-
+if (!defined('DOKU_INC')) die(); // must be run from within DokuWiki
+@require_once(dirname(__FILE__).'/tpl_functions.php'); /* include hook for template functions */
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -26,8 +19,7 @@ if (!defined('DOKU_INC')) die();
   </title>
 
   <?php tpl_metaheaders()?>
-
-  <link rel="shortcut icon" href="<?php echo DOKU_TPL?>images/favicon.ico" />
+  <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
 </head>
 
 <body>

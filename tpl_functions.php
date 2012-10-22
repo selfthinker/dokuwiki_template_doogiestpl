@@ -16,3 +16,12 @@ if (!function_exists('tpl_includeFile')) {
 
     }
 }
+
+/**
+ * simplified tpl_favicon() for older DokuWiki versions
+ */
+if (!function_exists('tpl_favicon')) {
+    function tpl_favicon() {
+        return '<link rel="shortcut icon" href="'.DOKU_TPL.'images/favicon.ico" />';
+    }
+}
