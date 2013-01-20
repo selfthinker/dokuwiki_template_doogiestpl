@@ -30,7 +30,7 @@ if (!defined('DOKU_INC')) die(); // must be run from within DokuWiki
 <body>
 <?php tpl_includeFile('topheader.html')?>
 <?php html_msgarea() ?>
-<div class="dokuwiki">
+<div class="dokuwiki <?php if (tpl_getConf('hasLongTitles')) echo 'hasLongTitles' ?>">
 
     <!-- login state -->
     <div class="user">

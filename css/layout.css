@@ -85,6 +85,13 @@
     font-weight: bolder;
     color: __background_alt__;
 }
+.dokuwiki.hasLongTitles .pagename {
+    font-size: 100%;
+    margin-bottom: 10px;
+}
+.dokuwiki.hasLongTitles .header .tools {
+    padding-top: 20px;
+}
 
 .dokuwiki .pagename a {
     color: __text_alt__ !important;

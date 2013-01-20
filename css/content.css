@@ -294,9 +294,12 @@
     margin: 0 1.0em 0.5em 0;
 }
 
-.dokuwiki div.search_quickresult li {
-    margin: 0 1.0em 0 1.0em;
-    width: 30%;
+.dokuwiki div.search_quickresult ul li {
+    margin: 0 1em;
+    width: 29%;
+}
+.dokuwiki.hasLongTitles div.search_quickresult ul li {
+    width: 45%;
 }
 
 
