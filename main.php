@@ -133,7 +133,7 @@ if (!defined('DOKU_INC')) die(); // must be run from within DokuWiki
                 </div>
             </div>
 
-            <?php if (!tpl_getConf('actionsToTop')): ?>
+            <?php if (!tpl_getConf('actionsToTop') || (tpl_getConf('actionsToTop') == 2)): ?>
                 <!-- page actions -->
                 <div class="bar-left" id="bar__bottomleft">
                     <?php

@@ -4,4 +4,4 @@
  */
 
 $meta['tabsPage']     = array('string');
-$meta['actionsToTop'] = array('onoff');
+$meta['actionsToTop'] = array('multichoice','_choices' => array(0,1,2));
