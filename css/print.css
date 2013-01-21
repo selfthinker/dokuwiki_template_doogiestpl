@@ -35,6 +35,7 @@ div.info,
 div.success,
 div.error,
 div.breadcrumbs,
+div.actions,
 div.secedit {
   display: none;
 }
