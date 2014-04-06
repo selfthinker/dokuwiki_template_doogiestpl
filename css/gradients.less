@@ -1,0 +1,33 @@
+/**
+ * This creates the gradients for header and navigation tabs.
+ *
+ * @author Anika Henke <anika@selfthinker.org>
+ * @author Robert Rackl <wiki@doogie.de>
+ */
+
+.header-gradient(@color) {
+    background: @color;
+    background: -moz-linear-gradient(left, @color 0%, lighten(@color, 20) 25%, lighten(@color, 20) 75%, lighten(@color, 31) 82%, lighten(@color, 47) 96%, lighten(@color, 39) 100%);
+    background: -webkit-linear-gradient(left, @color 0%, lighten(@color, 20) 25%, lighten(@color, 20) 75%, lighten(@color, 31) 82%, lighten(@color, 47) 96%, lighten(@color, 39) 100%);
+    background: -o-linear-gradient(left, @color 0%, lighten(@color, 20) 25%, lighten(@color, 20) 75%, lighten(@color, 31) 82%, lighten(@color, 47) 96%, lighten(@color, 39) 100%);
+    background: -ms-linear-gradient(left, @color 0%, lighten(@color, 20) 25%, lighten(@color, 20) 75%, lighten(@color, 31) 82%, lighten(@color, 47) 96%, lighten(@color, 39) 100%);
+    background: linear-gradient(left, @color 0%, lighten(@color, 20) 25%, lighten(@color, 20) 75%, lighten(@color, 31) 82%, lighten(@color, 47) 96%, lighten(@color, 39) 100%);
+}
+
+.tab-gradient(@color) {
+    background: @color;
+    background: -moz-linear-gradient(top, lighten(@color, 16) 0%, lighten(@color, 16) 10%, lighten(@color, 4) 11%, lighten(@color, 4) 55%, @color 56%, @color 100%);
+    background: -webkit-linear-gradient(top, lighten(@color, 16) 0%, lighten(@color, 16) 10%, lighten(@color, 4) 11%, lighten(@color, 4) 55%, @color 56%, @color 100%);
+    background: -o-linear-gradient(top, lighten(@color, 16) 0%, lighten(@color, 16) 10%, lighten(@color, 4) 11%, lighten(@color, 4) 55%, @color 56%, @color 100%);
+    background: -ms-linear-gradient(top, lighten(@color, 16) 0%, lighten(@color, 16) 10%, lighten(@color, 4) 11%, lighten(@color, 4) 55%, @color 56%, @color 100%);
+    background: linear-gradient(top, lighten(@color, 16) 0%, lighten(@color, 16) 10%, lighten(@color, 4) 11%, lighten(@color, 4) 55%, @color 56%, @color 100%);
+}
+
+.dokuwiki .header {
+    .header-gradient(__header_background__);
+}
+
+.dokuwiki #tab__nav a {
+    .tab-gradient(__tab_background__);
+    border-color: lighten(__tab_background__, 7);
+}
