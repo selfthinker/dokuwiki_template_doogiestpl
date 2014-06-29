@@ -89,7 +89,7 @@
 }
 
 .dokuwiki .pagename a {
-    color: __text_alt__ !important;
+    color: __border__ !important;
     text-decoration: none !important;
 }
 
